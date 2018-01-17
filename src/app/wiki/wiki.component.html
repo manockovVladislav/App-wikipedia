@@ -1,3 +1,8 @@
-<p>
-  wiki works!
-</p>
+<div class="center">Введите название статьи:<input type="text" #tb>
+    <button (click)="search(tb.value)">Искать</button>
+</div>
+<!--div  который повторяется столькораз сколько элементов в массиве items-->
+<div *ngFor="let item of items">
+    <a href="{{item.link}}">{{item.name}}</a>
+    <br/> {{item.description}}
+</div>

@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpModule, JsonpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
 import { WikiComponent } from './wiki/wiki.component';
+import { WikiService } from './shared/wiki.service';
 
 
 @NgModule({
@@ -12,9 +14,11 @@ import { WikiComponent } from './wiki/wiki.component';
     WikiComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    JsonpModule
   ],
-  providers: [],
+  providers: [WikiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
